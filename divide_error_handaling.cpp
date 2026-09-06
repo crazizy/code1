@@ -1,25 +1,29 @@
-include<iostream>
+#include<iostream>
 using namespace std;
+
 int main()
 {
-    int a,b,c;
-    cout<<"Devide any two number\n";
-    cin>>a>>b;
-   
-   try
-   {
-    if(b==0)
+    int a, b, c;
+
+    cout << "Devide any two number\n";
+    cin >> a >> b;
+
+    try
     {
-        throw b;
+        if(b == 0)
+        {
+            throw b; // Error if denominator is zero
+        }
+
+        c = a / b;
+        cout << "\n div is " << c;
     }
-    c=a/b;
-    cout<<"\n div is "<<c;
-   }
-   catch(int x)
-   {
-    cout<<"Arithmatic error\n";
-    cout<<"divide by "<<x;
-   }
-    cout<<"\nAfter division";
+    catch(int x)
+    {
+        cout << "Arithmatic error\n";
+        cout << "divide by " << x;
+    }
+
+    cout << "\nAfter division";
     return 0;
 }
